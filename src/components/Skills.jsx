@@ -88,9 +88,9 @@ const Skills = () => {
       icon: <Bug size={40} />,
       title: 'Tools & Methodologies',
       skills: [
-        'Agile / Scrum',
-        'Kanban',
+        'Agile /Scrum/Kanban',
         'Jira',
+        'ClickUp',
         'TestRail',
         'Postman',
         'Swagger'
