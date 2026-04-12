@@ -5,11 +5,31 @@
   position: relative;
 }
 
+.projects-section .section-header {
+  margin-bottom: 0;
+}
+
+.projects-section-intro {
+  max-width: 52rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.projects-section-intro strong {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .project-card {
@@ -43,7 +63,29 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-org-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
   margin-bottom: 1rem;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.16),
+    rgba(0, 102, 204, 0.1)
+  );
+  border: 1px solid rgba(0, 212, 255, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.12);
 }
 
 .project-description {

@@ -101,6 +101,28 @@
   margin: 0;
 }
 
+.experience-tech-highlight {
+  margin-top: 1rem;
+  padding: 0.875rem 1.125rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 212, 255, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.14),
+    rgba(0, 102, 204, 0.1)
+  );
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.08);
+}
+
+.experience-tech-label {
+  color: var(--accent-primary);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
 @media (max-width: 768px) {
   .experience-section {
     padding: 4rem 1rem;

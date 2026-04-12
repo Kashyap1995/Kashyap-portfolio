@@ -1,44 +1,52 @@
 import { motion } from 'framer-motion'
-import { Award, Calendar } from 'lucide-react'
+import {
+  BadgeCheck,
+  BookOpen,
+  Briefcase,
+  Bug,
+  KanbanSquare,
+  Sparkles,
+  TestTube,
+} from 'lucide-react'
 import './Certifications.css'
 
 const Certifications = () => {
   const certifications = [
     {
-      title: 'ISTQB Certified Tester',
+      title: 'ISTQB Certified Tester Foundation Level (CTFL)',
       issuer: 'ISTQB',
-      icon: <Award size={40} />
+      icon: <BadgeCheck size={40} />,
     },
     {
       title: 'Scrum Master',
       issuer: 'Udemy',
-      icon: <Award size={40} />
+      icon: <KanbanSquare size={40} />,
     },
     {
       title: 'Project Management',
       issuer: 'Great Learning',
-      icon: <Award size={40} />
+      icon: <Briefcase size={40} />,
     },
     {
-      title: 'Bug Mania Competition',
+      title: 'Bug Mania Competition — Won',
       issuer: 'Competition',
-      icon: <Award size={40} />
+      icon: <Bug size={40} />,
     },
     {
       title: 'Cypress Automation',
       issuer: 'Udemy',
-      icon: <Award size={40} />
+      icon: <TestTube size={40} />,
     },
     {
       title: 'Gen AI in Software Testing',
       issuer: 'Udemy',
-      icon: <Award size={40} />
+      icon: <Sparkles size={40} />,
     },
     {
       title: 'Google Prompting Essentials',
       issuer: 'Google',
-      icon: <Award size={40} />
-    }
+      icon: <BookOpen size={40} />,
+    },
   ]
 
   return (
@@ -72,10 +80,6 @@ const Certifications = () => {
               <div className="cert-content">
                 <h3 className="cert-title">{cert.title}</h3>
                 <p className="cert-issuer">{cert.issuer}</p>
-                <div className="cert-year">
-                  <Calendar size={16} />
-                  {cert.year}
-                </div>
               </div>
             </motion.div>
           ))}

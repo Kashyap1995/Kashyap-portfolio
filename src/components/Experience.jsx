@@ -1,9 +1,17 @@
 import { motion } from 'framer-motion'
-import { Briefcase, Calendar, MapPin } from 'lucide-react'
+import { Briefcase, Calendar, Sparkles } from 'lucide-react'
 import './Experience.css'
 
 const Experience = () => {
   const experiences = [
+    {
+      title: 'AI-Powered QA Automation',
+      description:
+        'An AI-driven test automation workflow: enter a Jira ID and the system fetches the user story from Jira with Zephyr integration. Gemini AI and GitHub Copilot analyze the story and generate comprehensive test cases—positive, negative, and edge scenarios. Includes dynamic story retrieval, AI-based test generation, Copilot-assisted development, an automated Playwright execution flow, Allure reports for results, and end-to-end QA with minimal manual effort.',
+      techHighlight: 'Jira, Zephyr, Gemini AI, GitHub Copilot, Playwright, Allure Reports.',
+      year: 'Ongoing',
+      icon: <Sparkles size={24} />
+    },
     {
       title: 'Built Automation Frameworks from Scratch',
       description: 'Designed and developed comprehensive test automation frameworks using Selenium, Cypress, and Playwright. Implemented Page Object Model (POM) and Data-Driven Testing approaches for maintainable and scalable test suites.',
@@ -65,6 +73,12 @@ const Experience = () => {
                   </span>
                 </div>
                 <p className="experience-description">{exp.description}</p>
+                {exp.techHighlight && (
+                  <p className="experience-tech-highlight">
+                    <span className="experience-tech-label">Tech:</span>{' '}
+                    {exp.techHighlight}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}

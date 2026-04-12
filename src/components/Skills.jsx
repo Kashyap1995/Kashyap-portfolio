@@ -31,7 +31,7 @@ const Skills = () => {
       skills: [
         'Selenium Java',
         'Cypress',
-        'Playwright MCP',
+        'Playwright TS',
         'Maven',
         'REST Assured & Postman',
         'JMeter'
@@ -42,11 +42,12 @@ const Skills = () => {
       icon: <Sparkles size={40} />,
       title: 'AI Automation Tools',
       skills: [
-        'Testim',
-        'Mabl',
-        'Browserstack',
-        'Katalon AI',
-        'Gen AI Tools'
+        'Google Gemini',
+        'Anthropic Claude',
+        'GitHub Copilot',
+        'OpenAI ChatGPT',
+        'Cursor AI',
+        'Testim'
       ],
       color: '#a855f7'
     },
@@ -68,7 +69,9 @@ const Skills = () => {
         'GitHub Actions',
         'Jenkins',
         'GitLab CI',
-        'Docker'
+        'Azure DevOps Pipelines',
+        'Docker',
+        'QAOps'
       ],
       color: '#8b5cf6'
     },
@@ -80,7 +83,7 @@ const Skills = () => {
         'Selenium + Cucumber (BDD)',
         'Data-Driven Testing',
         'Hybrid Advance POM Framework',
-        'Mocha, Chai',
+        'AI-built automation framework structure',
       ],
       color: '#ec4899'
     },
@@ -89,11 +92,10 @@ const Skills = () => {
       title: 'Tools & Methodologies',
       skills: [
         'Agile /Scrum/Kanban',
-        'Jira',
+        'Jira (management tool)',
         'ClickUp',
         'TestRail',
-        'Postman',
-        'Swagger'
+        'AI tools & methodology',
       ],
       color: '#14b8a6'
     },

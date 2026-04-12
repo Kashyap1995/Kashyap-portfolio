@@ -1,9 +1,19 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Code, TestTube, Zap } from 'lucide-react'
+import { Building2, Code, MousePointerClick, TestTube, Zap } from 'lucide-react'
 import './Projects.css'
+
+const PROJECT_ORG_BADGE = 'Delivered at current organization'
 
 const Projects = () => {
   const projects = [
+    {
+      title: '1-Click Automation Demo',
+      description:
+        'Hands-on demo automating QA workflows in a single action: Playwright MCP drives the browser, Jira and Zephyr cover work and test management, Gemini powers intelligent steps and checks, and GitHub Copilot speeds authoring and iteration.',
+      tech: ['Playwright MCP', 'Jira', 'Gemini', 'Zephyr', 'GitHub Copilot'],
+      icon: <MousePointerClick size={32} />,
+      color: '#06b6d4'
+    },
     {
       title: 'Test Automation Framework',
       description: 'A comprehensive test automation Hybrid Advance level framework built with Selenium and Java, implementing Page Object Model pattern. Features include parallel execution, cross-browser testing, and detailed reporting.',
@@ -53,6 +63,10 @@ const Projects = () => {
         >
           <h2 className="section-title">Projects</h2>
           <div className="section-divider"></div>
+          <p className="projects-section-intro">
+            Highlights from production QA and automation work—each item shipped in
+            my <strong>current organization</strong>, not generic portfolio samples.
+          </p>
         </motion.div>
 
         <div className="projects-grid">
@@ -70,6 +84,10 @@ const Projects = () => {
                 {project.icon}
               </div>
               <h3 className="project-title">{project.title}</h3>
+              <span className="project-org-badge">
+                <Building2 size={14} aria-hidden />
+                {PROJECT_ORG_BADGE}
+              </span>
               <p className="project-description">{project.description}</p>
               <div className="project-tech">
                 {project.tech.map((tech, techIndex) => (

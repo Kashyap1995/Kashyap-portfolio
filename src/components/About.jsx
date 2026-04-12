@@ -48,7 +48,7 @@ const About = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p className="about-text">
-            With over 7.5 years of experience in Quality Assurance, I specialize
+            With 7+ years of experience in Quality Assurance, I specialize
             in building comprehensive test automation frameworks and ensuring
             software quality through systematic testing approaches. My expertise
             spans across manual testing, automation frameworks, API testing, and
