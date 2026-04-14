@@ -88,13 +88,6 @@ const Home = () => {
               Hire Me →
             </motion.button>
 
-            {/* ✅ FINAL FIX */}
-            <button
-              className="btn-primary btn-cv"
-              onClick={() => navigate('/cv')}
-            >
-              View CV
-            </button>
           </div>
         </motion.div>
       </div>
