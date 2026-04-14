@@ -1,6 +1,6 @@
-// This is a test comment
 import { motion } from 'framer-motion'
 import { Trophy } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 
 const skillChips = [
@@ -13,6 +13,8 @@ const skillChips = [
 ]
 
 const Home = () => {
+  const navigate = useNavigate() // ✅ FIXED
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -23,6 +25,8 @@ const Home = () => {
   return (
     <section id="home" className="home-section">
       <div className="home-container">
+
+        {/* Profile */}
         <motion.div
           className="home-profile-top"
           initial={{ opacity: 0, y: 24 }}
@@ -34,172 +38,79 @@ const Home = () => {
               src="/profile-hero.png"
               alt="Kashyap Dave"
               className="home-profile-img"
-              width={800}
-              height={600}
-              decoding="async"
             />
           </div>
         </motion.div>
 
+        {/* Content */}
         <motion.div
           className="home-content"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="home-cert-strip"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.5 }}
-          >
-            <Trophy size={18} className="home-cert-icon" aria-hidden />
-            <span className="home-cert-text">
+          <div className="home-cert-strip">
+            <Trophy size={18} className="home-cert-icon" />
+            <span>
               <strong>ISTQB CTFL</strong> Certified
             </span>
-          </motion.div>
+          </div>
 
-          <motion.p
-            className="greeting"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            Hi, I'm
-          </motion.p>
+          <p className="greeting">Hi, I'm</p>
+          <h1 className="name">Kashyap Dave</h1>
 
-          <motion.h1
-            className="name"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.35, duration: 0.6 }}
-          >
-            Kashyap Dave
-          </motion.h1>
+          <h2 className="role">
+            Senior QA Engineer | AI Driven Testing | Automation
+          </h2>
 
-          <motion.h2
-            className="role"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-            <span className="role-title">Senior QA Engineer</span>
-            <span className="role-sep"> | </span>
-            <span className="role-ai">AI Driven Testing</span>
-            <span className="role-sep"> | </span>
-            <span className="role-ai">Automation</span>
-          </motion.h2>
-
-          <motion.p
-            className="home-headline"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.62, duration: 0.6 }}
-          >
+          <p className="home-headline">
             Turning Bugs Into Better Software — Now With AI
-          </motion.p>
+          </p>
 
-          <motion.div
-            className="home-details"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.72, duration: 0.6 }}
-          >
+          <div className="home-details">
             <p>
               I'm a <strong>Senior QA Engineer</strong> with <strong>7+ years</strong> of
-              experience in enterprise web apps, automation, and complex delivery environments.
-              I own quality end-to-end across discovery, test design, automation, CI/CD, and
-              release.
+              experience in enterprise web apps, automation, and CI/CD.
             </p>
-            <p>
-              What makes me different: I <em>build AI-assisted workflows that make testing smarter</em>
-              — from AI-powered QA with <strong>Jira & Zephyr</strong>, <strong>Gemini</strong>, and{' '}
-              <strong>GitHub Copilot</strong>, to <strong>Playwright</strong> automation with MCP,
-              and <strong>Allure</strong> reporting. Built using <span className="home-vibe">Vibe Coding</span>{' '}
-              with modern AI IDEs — production-ready patterns my teams use every day.
-            </p>
-            <p>
-            
-              <p>My mission: make QA smarter, faster, and measurable through AI and
-              automation.</p>
-            </p>
-          </motion.div>
 
-          <motion.div
-            className="home-skill-chips"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.85, duration: 0.55 }}
-          >
+            <p>
+              I build AI-powered QA workflows using Jira, Gemini, GitHub Copilot,
+              Playwright MCP, and Allure reporting.
+            </p>
+
+            <p>
+              My mission: make QA smarter, faster, and measurable through AI and automation.
+            </p>
+          </div>
+
+          {/* Skills */}
+          <div className="home-skill-chips">
             {skillChips.map((label) => (
               <span key={label} className="home-chip">
                 {label}
               </span>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="cta-buttons"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.95, duration: 0.6 }}
-          >
+          {/* CTA */}
+          <div className="cta-buttons">
             <motion.button
-              className="btn-primary btn-hire"
+              className="btn-primary"
               onClick={() => scrollToSection('contact')}
-              whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(0, 212, 255, 0.3)' }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.05 }}
             >
               Hire Me — Let's Talk →
             </motion.button>
-            <button className="btn-primary btn-cv" onClick={() => { window.open('/Kashyap-7.5Y-Job-App.pdf', '_blank'); }}>
+
+            <button
+              className="btn-primary btn-cv"
+              onClick={() => navigate('/cv')} // ✅ WORKING
+            >
               View CV
             </button>
-            <a href="/Kashyap-7.5Y-Job-App.pdf" target="_blank" rel="noopener noreferrer" style={{ display: 'none' }}>
-              Download CV
-            </a>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          className="home-visual"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
-        >
-          <div className="visual-grid">
-            <motion.div
-              className="visual-card card-1"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="card-icon">✓</div>
-            </motion.div>
-            <motion.div
-              className="visual-card card-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1, duration: 0.6 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="card-icon">⚡</div>
-            </motion.div>
-            <motion.div
-              className="visual-card card-3"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.6 }}
-              whileHover={{ y: -10, scale: 1.05 }}
-            >
-              <div className="card-icon">🔧</div>
-            </motion.div>
           </div>
         </motion.div>
       </div>
-
-      <div className="background-glow"></div>
     </section>
   )
 }

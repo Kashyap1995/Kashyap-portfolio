@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { motion } from 'framer-motion'
+
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import About from './components/About'
@@ -8,17 +10,29 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
+import CV from './CV'
+
 import './App.css'
 
-function App() {
+// 🔹 Portfolio Main Page
+function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
-      
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'certifications', 'contact']
+
+      const sections = [
+        'home',
+        'about',
+        'skills',
+        'experience',
+        'projects',
+        'certifications',
+        'contact'
+      ]
+
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -27,10 +41,8 @@ function App() {
         }
         return false
       })
-      
-      if (current) {
-        setActiveSection(current)
-      }
+
+      if (current) setActiveSection(current)
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -38,9 +50,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <>
       <Navigation activeSection={activeSection} />
-      
+
       <main>
         <Home />
         <About />
@@ -51,11 +63,12 @@ function App() {
         <Contact />
       </main>
 
+      {/* Scroll to Top */}
       <motion.button
         className="scroll-to-top"
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ 
+        animate={{
           opacity: scrollY > 300 ? 1 : 0,
           scale: scrollY > 300 ? 1 : 0
         }}
@@ -64,7 +77,21 @@ function App() {
       >
         ↑
       </motion.button>
-    </div>
+    </>
+  )
+}
+
+// 🔹 Main App with Routing
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/cv" element={<CV />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 
