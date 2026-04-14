@@ -157,16 +157,9 @@ const Home = () => {
             >
               Hire Me — Let's Talk →
             </motion.button>
-            {/* <motion.a
-              href="#"
-              className="btn-secondary"
-              download
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Download size={18} />
-              Download Resume
-            </motion.a> */}
+            <a href="/Kashyap-7.5Y-Job-App.pdf" download style={{ backgroundColor: '#007bff', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1rem' }}>
+              Download CV
+            </a>
           </motion.div>
         </motion.div>
 
