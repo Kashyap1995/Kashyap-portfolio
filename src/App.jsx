@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'  // 🔥 CHANGE HERE
 import { motion } from 'framer-motion'
 
 import Navigation from './components/Navigation'
