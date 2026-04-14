@@ -118,10 +118,11 @@ const Home = () => {
               with modern AI IDEs — production-ready patterns my teams use every day.
             </p>
             <p>
-              {/* Strictly fix container and image to square, fill exactly, no extra space, always cover */}
+              {/* Make image absolutely fill the box, never cut off, always fit full height/width */}
               <div
                 className="home-pic-wrapper"
                 style={{
+                  position: 'relative',
                   width: '200px',
                   height: '200px',
                   borderRadius: '50%',
@@ -130,25 +131,26 @@ const Home = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   margin: '0 auto 1.2rem',
-                  background: '#eee'
+                  background: '#eee',
                 }}
               >
                 <img
                   src="/profile.jpg" // Set your correct image path
                   alt="Kashyap Dave"
                   style={{
-                    width: '200px',
-                    height: '200px',
-                    minWidth: '200px',
-                    minHeight: '200px',
-                    objectFit: 'cover',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain', // Ensures the entire image is always visible
                     objectPosition: 'center',
-                    display: 'block'
+                    display: 'block',
                   }}
                   className="home-pic"
                 />
               </div>
-        
+       
               <p>My mission: make QA smarter, faster, and measurable through AI and
               automation.</p>
             </p>
