@@ -10,7 +10,6 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Certifications from './components/Certifications'
 import Contact from './components/Contact'
-import CV from './CV'
 
 import './App.css'
 
@@ -85,7 +84,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Portfolio />} />
-        <Route path="/cv" element={<CV />} />
+      //  <Route path="/cv" element={<CV />} />
       </Routes>
     </Router>
   )
