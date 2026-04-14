@@ -79,7 +79,7 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
-            {/* Kashyap Dave */}
+            Kashyap Dave
           </motion.h1>
 
           <motion.h2
