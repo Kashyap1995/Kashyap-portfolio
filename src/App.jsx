@@ -14,7 +14,7 @@ import CV from './CV'
 
 import './App.css'
 
-// 🔹 Portfolio Main Page
+// 🔹 Portfolio Page
 function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
   const [scrollY, setScrollY] = useState(0)
@@ -50,7 +50,7 @@ function Portfolio() {
   }, [])
 
   return (
-    <>
+    <div className="portfolio-page">   {/* ✅ ADD WRAPPER */}
       <Navigation activeSection={activeSection} />
 
       <main>
@@ -72,25 +72,24 @@ function Portfolio() {
           opacity: scrollY > 300 ? 1 : 0,
           scale: scrollY > 300 ? 1 : 0
         }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
       >
         ↑
       </motion.button>
-    </>
+    </div>
   )
 }
 
-// 🔹 Main App with Routing
+// 🔹 Main App
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Portfolio />} />
-          <Route path="/cv" element={<CV />} />
-        </Routes>
-      </div>
+      <Routes>
+        {/* ✅ Portfolio Layout */}
+        <Route path="/" element={<Portfolio />} />
+
+        {/* ✅ Separate CV Page (NO Navigation, NO scroll logic) */}
+        <Route path="/cv" element={<CV />} />
+      </Routes>
     </Router>
   )
 }
