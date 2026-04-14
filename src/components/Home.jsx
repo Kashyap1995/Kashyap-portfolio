@@ -118,29 +118,31 @@ const Home = () => {
               with modern AI IDEs — production-ready patterns my teams use every day.
             </p>
             <p>
-              {/* Ensure the profile picture fully fills a square box with no overflow and matching width/height */}
+              {/* Strictly fix container and image to square, fill exactly, no extra space, always cover */}
               <div
                 className="home-pic-wrapper"
                 style={{
-                  width: '180px',
-                  height: '180px',
-                  overflow: 'hidden',
+                  width: '200px',
+                  height: '200px',
                   borderRadius: '50%',
+                  overflow: 'hidden',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 1rem',
-                  background: '#f5f6fa'
+                  margin: '0 auto 1.2rem',
+                  background: '#eee'
                 }}
               >
                 <img
-                  src="/profile.jpg" // Use your correct pic path
+                  src="/profile.jpg" // Set your correct image path
                   alt="Kashyap Dave"
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    width: '200px',
+                    height: '200px',
+                    minWidth: '200px',
+                    minHeight: '200px',
                     objectFit: 'cover',
-                    objectPosition: 'center center',
+                    objectPosition: 'center',
                     display: 'block'
                   }}
                   className="home-pic"
