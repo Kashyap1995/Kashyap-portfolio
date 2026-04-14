@@ -22,11 +22,6 @@ const Home = () => {
 
   return (
     <section id="home" className="home-section">
-      <div style={{ position: 'absolute', top: '1rem', right: '1rem' }}>
-        <a href="/Kashyap-7.5Y-Job-App.pdf" download style={{ backgroundColor: '#007bff', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', textDecoration: 'none', fontSize: '0.9rem' }}>
-          Download CV
-        </a>
-      </div>
       <div className="home-container">
         <motion.div
           className="home-profile-top"
@@ -157,7 +152,7 @@ const Home = () => {
             >
               Hire Me — Let's Talk →
             </motion.button>
-            <a href="/Kashyap-7.5Y-Job-App.pdf" download style={{ backgroundColor: '#007bff', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1rem' }}>
+            <a href="/Kashyap-7.5Y-Job-App.pdf" target="_blank" rel="noopener noreferrer" style={{ backgroundColor: '#007bff', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', textDecoration: 'none', fontSize: '0.9rem', marginLeft: '1rem', display: 'inline-block', border: 'none', cursor: 'pointer' }}>
               Download CV
             </a>
           </motion.div>
