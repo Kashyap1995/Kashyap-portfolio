@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'  // 🔥 CHANGE HERE
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import Navigation from './components/Navigation'
@@ -50,7 +50,7 @@ function Portfolio() {
   }, [])
 
   return (
-    <div className="portfolio-page">   {/* ✅ ADD WRAPPER */}
+    <div className="portfolio-page">
       <Navigation activeSection={activeSection} />
 
       <main>
@@ -84,10 +84,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* ✅ Portfolio Layout */}
         <Route path="/" element={<Portfolio />} />
-
-        {/* ✅ Separate CV Page (NO Navigation, NO scroll logic) */}
         <Route path="/cv" element={<CV />} />
       </Routes>
     </Router>
