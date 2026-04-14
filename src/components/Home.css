@@ -56,10 +56,9 @@
  * Crop ~head to belt: trim below belt (legs) and trim right edge so belt keys don’t show.
  */
 .home-profile-frame {
-  width: clamp(232px, 38vw, 296px);
-  aspect-ratio: 7 / 9;
-  height: auto;
-  max-height: min(56vh, 420px);
+  width: 200px; /* Adjust as needed */
+  aspect-ratio: 1; /* Make it a square */
+  height: 200px; /* Adjust as needed */
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid rgba(0, 212, 255, 0.45);
@@ -75,8 +74,6 @@
   object-fit: cover;
   /* Slight left bias so keys on the right often fall outside the visible crop */
   object-position: 42% 0;
-  /* bottom: hide below belt; right: hide keys on belt loop */
-  clip-path: inset(0 10% 28% 0);
   display: block;
 }
 
