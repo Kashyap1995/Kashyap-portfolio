@@ -30,11 +30,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="home-profile-frame">
-            <img
-              src="/profile-hero.png"
-              alt="Kashyap Dave"
-              className="home-profile-img"
-            />
+            <img src="/profile-hero.png" alt="Kashyap Dave" className="home-profile-img"/>
           </div>
         </motion.div>
 
@@ -60,12 +56,8 @@ const Home = () => {
           </p>
 
           <div className="home-details">
-            <p>
-              Senior QA Engineer with 7+ years in automation, CI/CD, and enterprise applications.
-            </p>
-            <p>
-              Specialized in AI-powered QA workflows using Playwright, Cypress, Selenium & AI tools.
-            </p>
+            <p>Senior QA Engineer with 7+ years in automation, CI/CD, and enterprise apps.</p>
+            <p>Specialized in AI-powered QA workflows using Playwright, Cypress & Selenium.</p>
           </div>
 
           <div className="home-skill-chips">
@@ -78,7 +70,6 @@ const Home = () => {
             <motion.button
               className="btn-primary"
               onClick={() => scrollToSection('contact')}
-              whileHover={{ scale: 1.05 }}
             >
               Hire Me →
             </motion.button>
