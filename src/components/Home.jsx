@@ -21,6 +21,11 @@ const Home = () => {
 
   return (
     <section id="home" className="home-section">
+      <div style={{ position: 'absolute', top: '1rem', right: '1rem' }}>
+        <a href="/Kashyap-7.5Y-Job-App.pdf" download style={{ backgroundColor: '#007bff', color: 'white', padding: '0.5rem 1rem', borderRadius: '0.25rem', textDecoration: 'none', fontSize: '0.9rem' }}>
+          Download CV
+        </a>
+      </div>
       <div className="home-container">
         <motion.div
           className="home-profile-top"
@@ -105,34 +110,20 @@ const Home = () => {
             transition={{ delay: 0.72, duration: 0.6 }}
           >
             <p>
-              I&apos;m a <strong>Senior QA Engineer</strong> with <strong>7+ years</strong> of
+              I'm a <strong>Senior QA Engineer</strong> with <strong>7+ years</strong> of
               experience in enterprise web apps, automation, and complex delivery environments.
               I own quality end-to-end across discovery, test design, automation, CI/CD, and
               release.
             </p>
             <p>
               What makes me different: I <em>build AI-assisted workflows that make testing smarter</em>
-              — from AI-powered QA with <strong>Jira &amp; Zephyr</strong>, <strong>Gemini</strong>, and{' '}
+              — from AI-powered QA with <strong>Jira & Zephyr</strong>, <strong>Gemini</strong>, and{' '}
               <strong>GitHub Copilot</strong>, to <strong>Playwright</strong> automation with MCP,
               and <strong>Allure</strong> reporting. Built using <span className="home-vibe">Vibe Coding</span>{' '}
               with modern AI IDEs — production-ready patterns my teams use every day.
             </p>
             <p>
-              <div className="home-avatar-wrapper" style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
-                <img
-                  src="/profile-img.webp"
-                  alt="Kashyap Dave"
-                  style={{
-                    width: "128px",
-                    height: "128px",
-                    objectFit: "cover",
-                    borderRadius: "50%",
-                    boxShadow: "0 4px 24px rgba(0,0,0,0.08)"
-                  }}
-                  loading="lazy"
-                />
-              </div>
-        
+            
               <p>My mission: make QA smarter, faster, and measurable through AI and
               automation.</p>
             </p>
@@ -163,7 +154,7 @@ const Home = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(0, 212, 255, 0.3)' }}
               whileTap={{ scale: 0.95 }}
             >
-              Hire Me — Let&apos;s Talk →
+              Hire Me — Let's Talk →
             </motion.button>
             {/* <motion.a
               href="#"
