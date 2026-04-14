@@ -1,93 +1,93 @@
-import { useState, useEffect } from 'react'
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Trophy } from 'lucide-react'
+import './Home.css'
 
-import Navigation from './components/Navigation'
-import Home from './components/Home'
-import About from './components/About'
-import Skills from './components/Skills'
-import Experience from './components/Experience'
-import Projects from './components/Projects'
-import Certifications from './components/Certifications'
-import Contact from './components/Contact'
+const skillChips = [
+  'ISTQB CTFL',
+  'Enterprise QA',
+  'AI Tool Builder',
+  'Vibe Coder',
+  'Team Mentor',
+  'Agile · Scrum',
+]
 
-import './App.css'
+const Home = () => {
 
-// 🔹 Portfolio Page
-function Portfolio() {
-  const [activeSection, setActiveSection] = useState('home')
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY)
-
-      const sections = [
-        'home',
-        'about',
-        'skills',
-        'experience',
-        'projects',
-        'certifications',
-        'contact'
-      ]
-
-      const current = sections.find(section => {
-        const element = document.getElementById(section)
-        if (element) {
-          const rect = element.getBoundingClientRect()
-          return rect.top <= 100 && rect.bottom >= 100
-        }
-        return false
-      })
-
-      if (current) setActiveSection(current)
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }
 
   return (
-    <div className="portfolio-page">
-      <Navigation activeSection={activeSection} />
+    <section id="home" className="home-section">
+      <div className="home-container">
 
-      <main>
-        <Home />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Certifications />
-        <Contact />
-      </main>
+        <motion.div
+          className="home-profile-top"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="home-profile-frame">
+            <img
+              src="/profile-hero.png"
+              alt="Kashyap Dave"
+              className="home-profile-img"
+            />
+          </div>
+        </motion.div>
 
-      {/* Scroll to Top */}
-      <motion.button
-        className="scroll-to-top"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{
-          opacity: scrollY > 300 ? 1 : 0,
-          scale: scrollY > 300 ? 1 : 0
-        }}
-      >
-        ↑
-      </motion.button>
-    </div>
+        <motion.div
+          className="home-content"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="home-cert-strip">
+            <Trophy size={18} />
+            <span><strong>ISTQB CTFL</strong> Certified</span>
+          </div>
+
+          <p className="greeting">Hi, I'm</p>
+          <h1 className="name">Kashyap Dave</h1>
+
+          <h2 className="role">
+            Senior QA Engineer | AI Driven Testing | Automation
+          </h2>
+
+          <p className="home-headline">
+            Turning Bugs Into Better Software — Now With AI
+          </p>
+
+          <div className="home-details">
+            <p>
+              Senior QA Engineer with 7+ years in automation, CI/CD, and enterprise applications.
+            </p>
+            <p>
+              Specialized in AI-powered QA workflows using Playwright, Cypress, Selenium & AI tools.
+            </p>
+          </div>
+
+          <div className="home-skill-chips">
+            {skillChips.map((label) => (
+              <span key={label} className="home-chip">{label}</span>
+            ))}
+          </div>
+
+          <div className="cta-buttons">
+            <motion.button
+              className="btn-primary"
+              onClick={() => scrollToSection('contact')}
+              whileHover={{ scale: 1.05 }}
+            >
+              Hire Me →
+            </motion.button>
+          </div>
+
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
-// 🔹 Main App
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Portfolio />} />
-      //  <Route path="/cv" element={<CV />} />
-      </Routes>
-    </Router>
-  )
-}
-
-export default App
+export default Home
