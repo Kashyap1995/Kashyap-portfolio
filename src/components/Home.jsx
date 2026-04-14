@@ -1,3 +1,4 @@
+// This is a test comment
 import { motion } from 'framer-motion'
 import { Trophy } from 'lucide-react'
 import './Home.css'
@@ -78,7 +79,6 @@ const Home = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.35, duration: 0.6 }}
           >
-            Kashyap Dave
           </motion.h1>
 
           <motion.h2
