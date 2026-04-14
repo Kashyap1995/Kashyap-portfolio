@@ -24,7 +24,6 @@ const Home = () => {
     <section id="home" className="home-section">
       <div className="home-container">
 
-        {/* Profile */}
         <motion.div
           className="home-profile-top"
           initial={{ opacity: 0, y: 24 }}
@@ -39,7 +38,6 @@ const Home = () => {
           </div>
         </motion.div>
 
-        {/* Content */}
         <motion.div
           className="home-content"
           initial={{ opacity: 0, y: 50 }}
@@ -70,14 +68,12 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Skills */}
           <div className="home-skill-chips">
             {skillChips.map((label) => (
               <span key={label} className="home-chip">{label}</span>
             ))}
           </div>
 
-          {/* CTA */}
           <div className="cta-buttons">
             <motion.button
               className="btn-primary"
