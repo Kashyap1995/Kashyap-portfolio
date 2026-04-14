@@ -12,7 +12,6 @@ const skillChips = [
 ]
 
 const Home = () => {
-  const navigate = useNavigate() // ✅ correct
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -87,8 +86,8 @@ const Home = () => {
             >
               Hire Me →
             </motion.button>
-
           </div>
+
         </motion.div>
       </div>
     </section>
