@@ -118,7 +118,23 @@ const Home = () => {
               with modern AI IDEs — production-ready patterns my teams use every day.
             </p>
             <p>
-             
+              {/* Fix for my pic size issue: Make pic fill the box (cover entire wrapper, no stretching) */}
+              <div className="home-pic-wrapper" style={{ maxWidth: 180, maxHeight: 180, width: 180, height: 180, overflow: 'hidden', borderRadius: '50%', margin: '0 auto 1rem' }}>
+                <img
+                  src="/profile.jpg" // change to your actual pic path
+                  alt="Kashyap Dave"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    display: 'block',
+                    borderRadius: '50%',
+                  }}
+                  className="home-pic"
+                />
+              </div>
+        
               <p>My mission: make QA smarter, faster, and measurable through AI and
               automation.</p>
             </p>
