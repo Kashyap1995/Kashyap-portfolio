@@ -252,6 +252,13 @@
   border: 2px solid var(--border-color);
 }
 
+.btn-cv {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--bg-primary);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  margin-left: 1rem;
+}
+
 .btn-secondary:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
